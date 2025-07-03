@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @user = User.new(name: 'balavikas', email: 'balavikass999@gmail.com', password: 'foobar', password_confirmation: 'foobar')
+    @user = User.new(name: "balavikas", email: "balavikass999@gmail.com", password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -14,12 +14,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "name should be present" do
-    @user.name = ' '
+    @user.name = " "
     assert_not @user.valid?
   end
 
   test "email should be present" do
-    @user.email = ' '
+    @user.email = " "
     assert_not @user.valid?
   end
 
@@ -58,7 +58,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should converted to downcase" do
-    mixed_case_email = 'FooBar@examPLe.Com'
+    mixed_case_email = "FooBar@examPLe.Com"
     @user.email = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
