@@ -14,8 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    byebug
-    reset_session  # clears all session data
+    reset_session
     redirect_to root_path, notice: "Logged out!"
   end
 end
