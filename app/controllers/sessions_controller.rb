@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
-    redirect_to root_path, notice: "Logged out!"
+    log_out
+    redirect_to root_path, status: :see_other
   end
 end
